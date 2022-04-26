@@ -1,16 +1,18 @@
 package net.lyncas.scienceTools.trigonometry.models;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import lombok.*;
 
 /**
  * @author Alexandre Marinho de Souza Júnior on 20/04/2022
  */
 
 @AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
+@ToString
+@JsonTypeName("circle")
 public class Circle extends TwoDimensionalShape{
 
     private Double radius;

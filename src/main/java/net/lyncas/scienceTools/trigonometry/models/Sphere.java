@@ -7,27 +7,31 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 /**
- * @author Alexandre Marinho de Souza Júnior on 20/04/2022
+ * Essa classe representa um modelo geométrico de esfera
+ * @author Alexandre Marinho de Souza Júnior on 26/04/2022
  */
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @ToString
-@JsonTypeName("rectangle")
-public class Rectangle extends TwoDimensionalShape{
+@JsonTypeName("sphere")
+public class Sphere extends ThreeDimensionalShape{
 
-    private Double width;
-    private Double height;
+    private Double radius;
+
+    @Override
+    public Double calculateVolume() {
+        return (4/3) * Math.PI * Math.pow(radius, 3);
+    }
 
     @Override
     public Double calculateArea() {
-        return width * height;
+        return 4 *  Math.PI * Math.pow(radius, 4);
     }
 
     @Override
     public Double calculatePerimeter() {
-        return (2 * width) + (2 * height);
+        return null;
     }
-
 }
